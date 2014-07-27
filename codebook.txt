@@ -1,0 +1,75 @@
+                Variable                                                                        Description     Type      AllowedValues
+=======================================================================================================================================
+                 Subject                                       ID of person participating in the experiment  integer               1-30
+                Activity                                                                   Type of activity   string             Laying
+                                                                                                                                Sitting
+                                                                                                                               Standing
+                                                                                                                                Walking
+                                                                                                                      WalkingDownstairs
+                                                                                                                        WalkingUpstairs
+        MeanTimeBodyAccX                   Mean value of body acceleration measured on X axis - Time domain   double                0-1                                                                                                            }
+        MeanTimeBodyAccY                   Mean value of body acceleration measured on Y axis - Time domain   double                0-1
+        MeanTimeBodyAccZ                   Mean value of body acceleration measured on Z axis - Time domain   double                0-1
+       StDevTimeBodyAccX           Standard deviation of body acceleration measured on X axis - Time domain   double                0-1
+       StDevTimeBodyAccY           Standard deviation of body acceleration measured on Y axis - Time domain   double                0-1
+       StDevTimeBodyAccZ           Standard deviation of body acceleration measured on Z axis - Time domain   double                0-1
+     MeanTimeGravityAccX                Mean value of gravity acceleration measured on X axis - Time domain   double                0-1
+     MeanTimeGravityAccY                Mean value of gravity acceleration measured on Y axis - Time domain   double                0-1
+     MeanTimeGravityAccZ                Mean value of gravity acceleration measured on Z axis - Time domain   double                0-1
+    StDevTimeGravityAccX        Standard deviation of gravity acceleration measured on X axis - Time domain   double                0-1
+    StDevTimeGravityAccY        Standard deviation of gravity acceleration measured on Y axis - Time domain   double                0-1
+    StDevTimeGravityAccZ        Standard deviation of gravity acceleration measured on Z axis - Time domain   double                0-1
+    MeanTimeBodyAccJerkX              Mean value of body jerk acceleration measured on X axis - Time domain   double                0-1
+    MeanTimeBodyAccJerkY              Mean value of body jerk acceleration measured on Y axis - Time domain   double                0-1
+    MeanTimeBodyAccJerkZ              Mean value of body jerk acceleration measured on Z axis - Time domain   double                0-1
+   StDevTimeBodyAccJerkX      Standard deviation of body jerk acceleration measured on X axis - Time domain   double                0-1
+   StDevTimeBodyAccJerkY      Standard deviation of body jerk acceleration measured on Y axis - Time domain   double                0-1
+   StDevTimeBodyAccJerkZ      Standard deviation of body jerk acceleration measured on Z axis - Time domain   double                0-1
+       MeanTimeBodyGyroX                     Mean value of gyroscopic body measured on X axis - Time domain   double                0-1
+       MeanTimeBodyGyroY                     Mean value of gyroscopic body measured on Y axis - Time domain   double                0-1
+       MeanTimeBodyGyroZ                     Mean value of gyroscopic body measured on Z axis - Time domain   double                0-1
+      StDevTimeBodyGyroX             Standard deviation of gyroscopic body measured on X axis - Time domain   double                0-1
+      StDevTimeBodyGyroY             Standard deviation of gyroscopic body measured on Y axis - Time domain   double                0-1
+      StDevTimeBodyGyroZ             Standard deviation of gyroscopic body measured on Z axis - Time domain   double                0-1
+   MeanTimeBodyGyroJerkX                Mean value of gyroscopic body jerk measured on X axis - Time domain   double                0-1
+   MeanTimeBodyGyroJerkY                Mean value of gyroscopic body jerk measured on Y axis - Time domain   double                0-1
+   MeanTimeBodyGyroJerkZ                Mean value of gyroscopic body jerk measured on Z axis - Time domain   double                0-1
+  StDevTimeBodyGyroJerkX        Standard deviation of gyroscopic body jerk measured on X axis - Time domain   double                0-1
+  StDevTimeBodyGyroJerkY        Standard deviation of gyroscopic body jerk measured on Y axis - Time domain   double                0-1
+  StDevTimeBodyGyroJerkZ        Standard deviation of gyroscopic body jerk measured on Z axis - Time domain   double                0-1
+      MeanTimeBodyAccMag                            Mean value of body acceleration magnitude - Time domain   double                0-1
+     StDevTimeBodyAccMag                    Standard deviation of body acceleration magnitude - Time domain   double                0-1
+   MeanTimeGravityAccMag                         Mean value of gravity acceleration magnitude - Time domain   double                0-1
+  StDevTimeGravityAccMag                 Standard deviation of gravity acceleration magnitude - Time domain   double                0-1
+  MeanTimeBodyAccJerkMag                       Mean value of body jerk acceleration magnitude - Time domain   double                0-1
+ StDevTimeBodyAccJerkMag               Standard deviation of body jerk acceleration magnitude - Time domain   double                0-1
+     MeanTimeBodyGyroMag                              Mean value of gyroscopic body magnitude - Time domain   double                0-1
+    StDevTimeBodyGyroMag                      Standard deviation of gyroscopic body magnitude - Time domain   double                0-1
+ MeanTimeBodyGyroJerkMag                         Mean value of gyroscopic body jerk magnitude - Time domain   double                0-1
+StDevTimeBodyGyroJerkMag                 Standard deviation of gyroscopic body jerk magnitude - Time domain   double                0-1
+        MeanFreqBodyAccX              Mean value of body acceleration measured on X axis - Frequency domain   double                0-1
+        MeanFreqBodyAccY              Mean value of body acceleration measured on Y axis - Frequency domain   double                0-1
+        MeanFreqBodyAccZ              Mean value of body acceleration measured on Z axis - Frequency domain   double                0-1
+       StDevFreqBodyAccX      Standard deviation of body acceleration measured on X axis - Frequency domain   double                0-1
+       StDevFreqBodyAccY      Standard deviation of body acceleration measured on Y axis - Frequency domain   double                0-1
+       StDevFreqBodyAccZ      Standard deviation of body acceleration measured on Z axis - Frequency domain   double                0-1
+    MeanFreqBodyAccJerkX         Mean value of body jerk acceleration measured on X axis - Frequency domain   double                0-1
+    MeanFreqBodyAccJerkY         Mean value of body jerk acceleration measured on Y axis - Frequency domain   double                0-1
+    MeanFreqBodyAccJerkZ         Mean value of body jerk acceleration measured on Z axis - Frequency domain   double                0-1
+   StDevFreqBodyAccJerkX Standard deviation of body jerk acceleration measured on X axis - Frequency domain   double                0-1
+   StDevFreqBodyAccJerkY Standard deviation of body jerk acceleration measured on Y axis - Frequency domain   double                0-1
+   StDevFreqBodyAccJerkZ Standard deviation of body jerk acceleration measured on Z axis - Frequency domain   double                0-1
+       MeanFreqBodyGyroX                Mean value of gyroscopic body measured on X axis - Frequency domain   double                0-1
+       MeanFreqBodyGyroY                Mean value of gyroscopic body measured on Y axis - Frequency domain   double                0-1
+       MeanFreqBodyGyroZ                Mean value of gyroscopic body measured on Z axis - Frequency domain   double                0-1
+      StDevFreqBodyGyroX        Standard deviation of gyroscopic body measured on X axis - Frequency domain   double                0-1
+      StDevFreqBodyGyroY        Standard deviation of gyroscopic body measured on Y axis - Frequency domain   double                0-1
+      StDevFreqBodyGyroZ        Standard deviation of gyroscopic body measured on Z axis - Frequency domain   double                0-1
+      MeanFreqBodyAccMag                       Mean value of body acceleration magnitude - Frequency domain   double                0-1
+     StDevFreqBodyAccMag               Standard deviation of body acceleration magnitude - Frequency domain   double                0-1
+  MeanFreqBodyAccJerkMag                  Mean value of body jerk acceleration magnitude - Frequency domain   double                0-1
+ StDevFreqBodyAccJerkMag          Standard deviation of body jerk acceleration magnitude - Frequency domain   double                0-1
+     MeanFreqBodyGyroMag                         Mean value of gyroscopic body magnitude - Frequency domain   double                0-1
+    StDevFreqBodyGyroMag                 Standard deviation of gyroscopic body magnitude - Frequency domain   double                0-1
+ MeanFreqBodyGyroJerkMag                    Mean value of gyroscopic body jerk magnitude - Frequency domain   double                0-1
+StDevFreqBodyGyroJerkMag            Standard deviation of gyroscopic body jerk magnitude - Frequency domain   double                0-1
