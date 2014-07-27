@@ -5,6 +5,9 @@ var_names<-read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//fea
 
 #reading activity dictionary -> for merging
 activity_dict<-read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//activity_labels.txt", sep=" ", skipNul=TRUE)
+#Transformation of activity names (Capitalizing)
+activity_dict[,2]<-gsub("(\\w)(\\w*)", "\\U\\1\\L\\2", activity_dict[,2], perl=TRUE)
+activity_dict[,2]<-gsub("(\\w*)_(\\w)(\\w*)", "\\1\\U\\2\\L\\3", activity_dict[,2], perl=TRUE)
 
 #names that will be applied to final table
 names<-c("Subject", "Activity", grep("mean|std", var_names$V2, value=TRUE))
@@ -19,7 +22,7 @@ raw_data<-read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//test
 activities<-read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//test/y_test.txt", sep=" ", skipNul=TRUE)
 #reading subjects
 subjects<-read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//test/subject_test.txt", sep=" ", skipNul=TRUE)
-
+getwd()
 combined<-data.frame(subjects[,1], merge(activity_dict, activities, by.x="V1", by.y="V1", all=TRUE)[,2], raw_data[,grep("mean|std", var_names$V2)])
 
 # 2. Reading train data and preprocessing
@@ -32,8 +35,12 @@ subjects<-read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//trai
 
 # 3. Final table
 combined<-rbind(combined, data.frame(subjects[,1], merge(activity_dict, activities, by.x="V1", by.y="V1", all=TRUE)[,2], raw_data[,grep("mean|std", var_names$V2)]))
-names(combined)<-names
 
+
+#Remove rows with any missing values
+if (any(is.na(combined))){
+    combined<-combined[complete.cases(combined),]
+}
 
 # 4. Fixing variable names. Note that variable names include capital letters due to the number and complexity of those names. This is intentionally
 # left to maintain the descriptive character of variable names.
@@ -51,5 +58,10 @@ names<-gsub("(.*)-std\\(\\)","StDev\\1",names)
 
 # Removal of remaining '-'
 names<-gsub("-","",names)
+#Apply names to tidy table
+names(combined)<-names
+
+write.table(x=combined, file="intermediate_tidy.table.txt", sep=" ", quote=FALSE, row.names=FALSE)
+
 
 
