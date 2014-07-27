@@ -1,7 +1,7 @@
-                Variable                                                                        Description     Type      AllowedValues
-=======================================================================================================================================
-                 Subject                                       ID of person participating in the experiment  integer               1-30
-                Activity                                                                   Type of activity   string             Laying
+                Variable                                                                        Description     Type      AllowedValues    Unit
+===============================================================================================================================================
+                 Subject                                       ID of person participating in the experiment  integer               1-30       -
+                Activity                                                                   Type of activity   string             Laying       -
                                                                                                                                 Sitting
                                                                                                                                Standing
                                                                                                                                 Walking
