@@ -1,19 +1,13 @@
-<<<<<<< HEAD
-# The purpose of this script is to extract the data available at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-=======
 # The purpose of this script is to extract the data available at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
->>>>>>> 94e9f6f3f1b43189ddd6e6a6237be72bc11c7e5b
 # and to create two tidy data sets containing:
 # 1 - variables with applied mean and standard deviation on the original data source and broken down by Subject and Activities
 # 2 - mean values of data set above broken down by Subject and Activities.
 # This script will save the created data sets in the "./TidyData" directory.
 # Please make sure that you have unzipped the source data into your working directory!
-<<<<<<< HEAD
 # More information on source data sets can be obtained at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 # Object that contains list of all relevant files
-
-#For some reasons '_' were changed to '-' marks in directory names
+# For some reasons '_' may be changed to '-' marks in directory names
 
 files<-c(
   features="getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset//features.txt",
@@ -27,23 +21,6 @@ files<-c(
 )
 
 # Stopping if any file is missing
-=======
-# More information on source data sets can be obtained at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
-
-# Object that contains list of all relevant files
-files<-c(
-  features="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//features.txt",
-  activity_labels="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//activity_labels.txt",
-  x_test="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//test/X_test.txt",
-  y_test="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//test/y_test.txt",
-  subject_test="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//test/subject_test.txt",
-  x_train="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//train//X_train.txt",
-  y_train="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//train//y_train.txt",
-  subject_train="getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset//train//subject_train.txt"
-)  
-
-# Stopping if any file is missing 
->>>>>>> 94e9f6f3f1b43189ddd6e6a6237be72bc11c7e5b
 if(any(!file.exists(files))){
   stop("There are missing files or working directory is improper")
 }
@@ -54,19 +31,11 @@ if(!file.exists(tidy_data_directory)){
   dir.create(tidy_data_directory)
 }
 
-<<<<<<< HEAD
 require(plyr)
 
 # Reading files with variable names. This will be used as column headers
 var_names<-read.table(files[['features']], sep=" ", skipNul=TRUE)
-
-# Reading activity dictionary. This will be merged later on.
-=======
-# Reading files with variable names. This will be used as column headers
-var_names<-read.table(files[['features']], sep=" ", skipNul=TRUE)
-
 # Reading activity dictionary. This will be merged later on. 
->>>>>>> 94e9f6f3f1b43189ddd6e6a6237be72bc11c7e5b
 activity_dict<-read.table(files[['activity_labels']], sep=" ", skipNul=TRUE)
 # Transformation on activity values are done in order to maintain tidy data characteristics.
 activity_dict[,2]<-gsub("(\\w)(\\w*)", "\\U\\1\\L\\2", activity_dict[,2], perl=TRUE)
@@ -80,13 +49,8 @@ raw_data<-read.table(files[['x_test']], skipNul=TRUE)
 activities<-read.table(files[['y_test']], sep=" ", skipNul=TRUE)
 subjects<-read.table(files[['subject_test']], sep=" ", skipNul=TRUE)
 
-<<<<<<< HEAD
 # The combined data frame will be the first data set
 combined<-data.frame(subjects[,1], join(activities, activity_dict, by="V1")[,2], raw_data[,grep("mean\\(\\)|std\\(\\)", var_names$V2)])
-=======
-# The combined data frame will be the first data set 
-combined<-data.frame(subjects[,1], merge(activity_dict, activities, by.x="V1", by.y="V1", all=TRUE)[,2], raw_data[,grep("mean\\(\\)|std\\(\\)", var_names$V2)])
->>>>>>> 94e9f6f3f1b43189ddd6e6a6237be72bc11c7e5b
 
 # Reading train data and preprocessing
 raw_data<-read.table(files[['x_train']], skipNul=TRUE)
@@ -94,11 +58,7 @@ activities<-read.table(files[['y_train']], sep=" ", skipNul=TRUE)
 subjects<-read.table(files[['subject_train']], sep=" ", skipNul=TRUE)
 
 # Combining two data sets
-<<<<<<< HEAD
 combined<-rbind(combined, data.frame(subjects[,1], join(activities, activity_dict, by="V1")[,2], raw_data[,grep("mean\\(\\)|std\\(\\)", var_names$V2)]))
-=======
-combined<-rbind(combined, data.frame(subjects[,1], merge(activity_dict, activities, by.x="V1", by.y="V1", all=TRUE)[,2], raw_data[,grep("mean\\(\\)|std\\(\\)", var_names$V2)]))
->>>>>>> 94e9f6f3f1b43189ddd6e6a6237be72bc11c7e5b
 
 #Remove rows with any missing values
 if (any(is.na(combined))){
@@ -130,9 +90,4 @@ row.names(final)<-seq(1:nrow(final))
 write.table(x=final, file=paste(tidy_data_directory, "/tidy_second.txt", sep=""), sep=" ", quote=FALSE, row.names=FALSE)
 
 # Removal of unused data sets to free memory
-<<<<<<< HEAD
 remove(var_names, activity_dict, raw_data, activities, subjects, names, files, tidy_data_directory)
-=======
-remove(var_names, activity_dict, raw_data, activities, subjects, names, files, tidy_data_directory)
-
->>>>>>> 94e9f6f3f1b43189ddd6e6a6237be72bc11c7e5b
